@@ -22,15 +22,15 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.7-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT")
     compileOnly("org.jetbrains:annotations:26.0.2")
-    compileOnly("net.william278.huskhomes:huskhomes-bukkit:4.9.9-dcf38e6")
+    compileOnly("net.william278.huskhomes:huskhomes-bukkit:4.6")
 
     implementation("de.themoep:inventorygui:1.6.5-SNAPSHOT")
     implementation("org.apache.commons:commons-text:1.13.1")
     implementation("net.william278:minedown:1.8.2")
     implementation("dev.dejvokep:boosted-yaml:1.3.7")
-    implementation("net.wesjd:anvilgui:2.0.3-SNAPSHOT")
+    implementation("net.wesjd:anvilgui:1.10.6-SNAPSHOT")
     implementation("net.william278:annotaml:2.0.7-4f14c61")
     implementation("net.william278:desertwell:2.0.4")
 
@@ -40,7 +40,7 @@ dependencies {
 
 tasks.compileJava {
     options.encoding = "UTF-8"
-    options.release.set(21)
+    options.release.set(17)
 }
 
 tasks.processResources {
@@ -55,10 +55,6 @@ tasks.processResources {
 }
 
 tasks.shadowJar {
-    manifest {
-        attributes["paperweight-mappings-namespace"] = "mojang"
-    }
-
     relocate("org.apache.commons.io", "pro.obydux.huskhomes.gui.libraries.commons.io")
     relocate("org.apache.commons.text", "pro.obydux.huskhomes.gui.libraries.commons.text")
     relocate("org.apache.commons.lang3", "pro.obydux.huskhomes.gui.libraries.commons.lang3")
